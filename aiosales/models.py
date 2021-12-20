@@ -1,4 +1,5 @@
-from tortoise import fields, Model
+from tortoise import fields
+from tortoise import Model
 
 
 class Shop(Model):
@@ -23,7 +24,7 @@ class Product(Model):
     warranty_period = fields.TimeDeltaField()
     image = fields.BinaryField(max_length=255)
 
-    shops: fields.ManyToManyRelation[Shop] = fields.ForeignKeyField(
+    shops: fields.ManyToManyRelation[Shop] = fields.ManyToManyField(
         'models.Shop', related_name='products', on_delete=fields.CASCADE
     )
     orders: fields.ReverseRelation['Order']

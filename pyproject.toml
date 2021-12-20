@@ -9,18 +9,38 @@ python = "^3.8"
 tortoise-orm = "^0.18.0"
 fastapi = "^0.70.1"
 uvicorn = "^0.16.0"
+dependency-injector = {extras = ["yaml"], version = "^4.37.0"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 ipython = "^7.30.1"
+isort = "^5.10.1"
+flake8 = "^4.0.1"
+flake8-aaa = "^0.12.0"
+pyproject-flake8 = "^0.0.1-alpha.2"
+deepdiff = "^5.7.0"
 
 [tool.poetry.scripts]
 server = "aiosales.main:start"
 
 [tool.isort]
-known_third_party = "dependency_injector"
 profile = "google"
 line_length = 119
+
+[tool.flake8]
+    exclude = """
+        .venv,
+        .git,
+        __pycache__,
+        __init__.py,
+    """
+    max-complexity = 10
+    max-line-length = 100
+    extend-ignore = """
+        W503,
+        E203,
+        E701,
+    """
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
