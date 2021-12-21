@@ -6,7 +6,7 @@ from fastapi import APIRouter
 from fastapi import Depends
 from fastapi import Query
 from fastapi import status
-from starlette.responses import FileResponse, StreamingResponse, Response
+from starlette.responses import Response
 from starlette.templating import Jinja2Templates
 
 from aiosales.containers import Container
@@ -14,7 +14,8 @@ from aiosales.containers import Dispatcher
 from aiosales.pydantic_models import OrderPostPydantic
 from aiosales.services.orders import OrdersService
 from aiosales.services.products import ProductsService
-from aiosales.utils import extract_values_from_dict, generate_pdf
+from aiosales.utils import extract_values_from_dict
+from aiosales.utils import generate_pdf
 
 router = APIRouter(
     prefix='/ishops',

@@ -3,7 +3,6 @@ from tortoise.queryset import QuerySet
 from aiosales.models import Product
 from aiosales.repositories.product import ProductRepository
 
-
 class ProductsService:
     product_repo: ProductRepository
     def __init__(self, product_repo: ProductRepository) -> None: ...

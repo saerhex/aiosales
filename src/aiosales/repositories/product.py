@@ -1,8 +1,7 @@
-from tortoise.functions import Sum
 from tortoise.query_utils import Prefetch
 
-from aiosales.constants import DeliveryStatus
-from aiosales.models import Product, Order
+from aiosales.models import Order
+from aiosales.models import Product
 from aiosales.repositories.abstract import AbstractRepository
 
 

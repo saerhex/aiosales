@@ -5,7 +5,9 @@ from dependency_injector import containers
 from dependency_injector import providers
 from fastapi import FastAPI
 from tortoise.contrib.fastapi import register_tortoise
-from tortoise.contrib.pydantic import pydantic_queryset_creator, PydanticListModel, PydanticModel
+from tortoise.contrib.pydantic import pydantic_queryset_creator
+from tortoise.contrib.pydantic import PydanticListModel
+from tortoise.contrib.pydantic import PydanticModel
 
 from aiosales.models import Order
 from aiosales.repositories.order import OrderRepository

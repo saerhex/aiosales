@@ -1,10 +1,11 @@
 from dataclasses import dataclass
-from typing import Dict
+from typing import Dict, Union
 
 from dependency_injector import containers
 from dependency_injector import providers
 from fastapi import FastAPI
-from pydantic import BaseModel
+from tortoise.contrib.pydantic import PydanticListModel
+from tortoise.contrib.pydantic import PydanticModel
 
 from aiosales.repositories.order import OrderRepository
 from aiosales.repositories.product import ProductRepository
@@ -12,10 +13,9 @@ from aiosales.repositories.shop import ShopRepository
 from aiosales.services.orders import OrdersService
 from aiosales.services.products import ProductsService
 
-
 @dataclass
 class Dispatcher:
-    models: Dict[str, BaseModel]
+    models: Dict[str, Union[PydanticListModel, PydanticModel]]
 
 
 class Container(containers.DeclarativeContainer):
