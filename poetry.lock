@@ -573,6 +573,17 @@ python-versions = "*"
 six = "*"
 
 [[package]]
+name = "python-multipart"
+version = "0.0.5"
+description = "A streaming multipart parser for Python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = ">=1.4.0"
+
+[[package]]
 name = "pytz"
 version = "2021.3"
 description = "World timezone definitions, modern and historical"
@@ -731,7 +742,7 @@ six = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "511e2314384f51fe554dcd4813b83674cdf88c1e6ad1deeb71563f964fc5ca3f"
+content-hash = "c2661f500c62d6fc75f53eb4a029902e265e820dc96641af62ed19a281a26959"
 
 [metadata.files]
 aiosqlite = [
@@ -1092,6 +1103,9 @@ pytest = [
 python-bidi = [
     {file = "python-bidi-0.4.2.tar.gz", hash = "sha256:5347f71e82b3e9976dc657f09ded2bfe39ba8d6777ca81a5b2c56c30121c496e"},
     {file = "python_bidi-0.4.2-py2.py3-none-any.whl", hash = "sha256:50eef6f6a0bbdd685f9e8c207f3c9050f5b578d0a46e37c76a9c4baea2cc2e13"},
+]
+python-multipart = [
+    {file = "python-multipart-0.0.5.tar.gz", hash = "sha256:f7bb5f611fc600d15fa47b3974c8aa16e93724513b49b5f95c81e6624c83fa43"},
 ]
 pytz = [
     {file = "pytz-2021.3-py2.py3-none-any.whl", hash = "sha256:3672058bc3453457b622aab7a1c3bfd5ab0bdae451512f6cf25f64ed37f5b87c"},

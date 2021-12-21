@@ -15,6 +15,7 @@ from aiosales.repositories.product import ProductRepository
 from aiosales.repositories.shop import ShopRepository
 from aiosales.services.orders import OrdersService
 from aiosales.services.products import ProductsService
+from aiosales.services.shops import ShopService
 
 
 @dataclass
@@ -65,5 +66,11 @@ class Container(containers.DeclarativeContainer):
 
     products_service = providers.Factory(
         ProductsService,
-        product_repo=product_repo
+        product_repo=product_repo,
+        shop_repo=shop_repo
+    )
+
+    shop_service = providers.Factory(
+        ShopService,
+        shop_repo=shop_repo
     )

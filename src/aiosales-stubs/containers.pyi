@@ -12,6 +12,8 @@ from aiosales.repositories.product import ProductRepository
 from aiosales.repositories.shop import ShopRepository
 from aiosales.services.orders import OrdersService
 from aiosales.services.products import ProductsService
+from aiosales.services.shops import ShopService
+
 
 @dataclass
 class Dispatcher:
@@ -35,3 +37,4 @@ class Container(containers.DeclarativeContainer):
 
     orders_service: OrdersService
     products_service: ProductsService
+    shop_service: ShopService

@@ -24,7 +24,7 @@ class Product(Model):
         decimal_places=2
     )
     warranty_period = fields.TimeDeltaField()
-    image = fields.BinaryField(max_length=255)
+    image = fields.BinaryField(max_length=255, null=True)
 
     shops: fields.ManyToManyRelation[Shop] = fields.ManyToManyField(  # type: ignore
         'models.Shop', related_name='products', on_delete=fields.CASCADE

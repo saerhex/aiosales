@@ -12,6 +12,7 @@ uvicorn = "^0.16.0"
 dependency-injector = {extras = ["yaml"], version = "^4.37.0"}
 Jinja2 = "^3.0.3"
 xhtml2pdf = "^0.2.5"
+python-multipart = "^0.0.5"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
