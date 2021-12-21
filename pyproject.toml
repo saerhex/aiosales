@@ -10,6 +10,8 @@ tortoise-orm = "^0.18.0"
 fastapi = "^0.70.1"
 uvicorn = "^0.16.0"
 dependency-injector = {extras = ["yaml"], version = "^4.37.0"}
+Jinja2 = "^3.0.3"
+xhtml2pdf = "^0.2.5"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -18,7 +20,7 @@ isort = "^5.10.1"
 flake8 = "^4.0.1"
 flake8-aaa = "^0.12.0"
 pyproject-flake8 = "^0.0.1-alpha.2"
-deepdiff = "^5.7.0"
+pyright = "^0.0.13"
 
 [tool.poetry.scripts]
 server = "aiosales.main:start"
@@ -41,6 +43,22 @@ line_length = 119
         E203,
         E701,
     """
+
+[tool.pyright]
+include = ["src"]
+exclude = [
+    "**/node_modules",
+    "**/__pycache__",
+    "src/experimental",
+    "src/typestubs"
+]
+stubPath = "src/**stubs"
+venv = "env367"
+reportMissingImports = true
+reportMissingTypeStubs = true
+pythonVersion = "3.8"
+pythonPlatform = "Linux"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

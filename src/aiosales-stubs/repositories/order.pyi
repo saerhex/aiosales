@@ -1,0 +1,13 @@
+from typing import Any
+
+from tortoise.expressions import Q
+from tortoise.queryset import QuerySet
+
+from aiosales.models import Order
+from aiosales.repositories.abstract import AbstractRepository
+
+class OrderRepository(AbstractRepository[Order]):
+    async def add(self, item: Order) -> None: ...
+    async def get(self, **reference: Any) -> Order: ...
+    async def list(self) -> QuerySet[Order]: ...
+    async def filter(self, filter_set: Q) -> QuerySet[Order]: ...
